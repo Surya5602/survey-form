@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Data </title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+    <script>
+        function SubForm (){
+            $.ajax({
+                url:"https://api.apispreadsheets.com/data/Cn89RfKo6XXdhGPg/",
+                type:"post",
+                data:$("#myForm").serializeArray(),
+                success: function(){
+                    alert("Form Data Submitted :)")
+                },
+                error: function(){
+                    alert("There was an error :(")
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="bg-img"></div>
+    <div class="bg-text">
+        <h1>Form</h1>
+    <form id="myForm">
+        <label>First name</label><br>
+        <input type="text" name="First name" /><br><br>
+        <label>Last name</label><br>
+        <input type="text" name="Last name"/><br><br>
+        <label>Age</label><br>
+        <input type="date" name="Age" /><br><br>
+        <label>Gender</label><br>
+        <input type="radio" name="Gender" />Male
+        <input type="radio" name="Gender" />Female
+        <input type="radio" name="Gender" />Others <br><br>
+        <label>Email</label><br>
+        <input type="text" name="Email"/><br><br>
+        <label>Current Edu</label> <br>   
+            <input type="radio" name="Current Edu"/> School 
+            <input type="radio" name="Current Edu"/> College     
+            <input type="radio" name="Current Edu"/> Other  
+            <br>    <br> 
+            <label>Programming</label> <br>   
+            <input type="checkbox" name="Programming "/> C
+            <input type="checkbox" name="Programming "/> Java    
+            <input type="checkbox" name="Programming "/> Java Script  
+            <br>    <br> 
+            <label>Comm lang</label> <br>   
+            <input type="checkbox" name="Comm lang "/> English
+            <input type="checkbox" name="Comm lang "/> French   
+            <input type="checkbox" name="Comm lang "/> Others  
+            <br>    <br> 
+            <label>Phone no </label> <br>  
+            <input type="tel"> <br> <br> 
+                </form>
+    <button onclick='SubForm()'>Submit</button>
+</div>
+</body>
+</html>
