@@ -1,64 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Form Data </title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous"></script>
-    <script>
-        function SubForm (){
-            $.ajax({
-                url:"https://api.apispreadsheets.com/data/8nfC495nUn9MwZmj/",
-                type:"post",
-                data:$("#myForm").serializeArray(),
-                success: function(){
-                    alert("Form Data Submitted :)")
-                },
-                error: function(){
-                    alert("There was an error :(")
-                }
-            });
-        }
-    </script>
+	<title>Save Web Form Data to Spreadsheets</title>
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+	<script>
+		function SubForm (){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/8nfC495nUn9MwZmj/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Form Data Submitted :)")
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
+		}
+	</script>
 </head>
 <body>
-    <div class="bg-img"></div>
-    <div class="bg-text">
-        <h1>Form</h1>
-    <form id="myForm">
-        <label>First name</label><br>
-        <input type="text" name="First name" /><br><br>
-        <label>Last name</label><br>
-        <input type="text" name="Last name"/><br><br>
-        <label>Age</label><br>
-        <input type="date" name="Age" /><br><br>
-        <label>Gender</label><br>
-        <input type="radio" name="Gender" value="Male" />Male
-        <input type="radio" name="Gender" value="Female" />Female
-        <input type="radio" name="Gender" value="Others"/>Others <br><br>
-        <label>Email</label><br>
-        <input type="text" name="Email"/><br><br>
-        <label>Current Edu</label> <br>   
-            <input type="radio" name="Current Edu" value="School"/> School 
-            <input type="radio" name="Current Edu" value="College"/> College     
-            <input type="radio" name="Current Edu" value="Other"/> Other  
-            <br>    <br> 
-            <label>Programming</label> <br>   
-            <input type="checkbox" name="Programming" value = "C"/> C
-            <input type="checkbox" name="Programming" value = "Java "/> Java    
-            <input type="checkbox" name="Programming" value= "Java Script"/> Java Script  
-            <br>    <br> 
-            <label>Comm lang</label> <br>   
-            <input type="checkbox" name="Comm lang " value="English"/> English
-            <input type="checkbox" name="Comm lang " value="French"/> French   
-            <input type="checkbox" name="Comm lang " value="Others"/> Others  
-            <br>    <br> 
-            <label>Phone no </label> <br>  
-            <input name="Phone no"> <br> <br> 
-                </form>
-    <button onclick='SubForm()'>Submit</button>
-</div>
+	<form id="myForm">
+		<label>First name</label>
+		<input name="First name" />
+		<br/>
+		<label>Last name</label>
+		<input name="Last name" />
+		<br/>
+		<label>Age</label>
+		<input name="Age" />
+		<br/>
+		<label>Gender</label>
+		<input name="Gender" />
+		<br/>
+		<label>Email</label>
+		<input name="Email" />
+		<br/>
+		<label>Current Edu</label>
+		<input name="Current Edu" />
+		<br/>
+		<label>Programming</label>
+		<input name="Programming" />
+		<br/>
+		<label>Comm lang</label>
+		<input name="Comm lang" />
+		<br/>
+		<label>Phone no</label>
+		<input name="Phone no" />
+		<br/>
+	</form>
+	<button onclick='SubForm()'>Submit</button>
 </body>
 </html>
